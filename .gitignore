@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# Exclude directories from being ignored to ensure Git searches inside them
+!*/
+
+# But not requirements.txt files in subdirectories
+!**/requirements.txt
+
+# And not the script
+!venv.sh
+
+# And not the README
+!README.md
