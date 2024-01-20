@@ -11,6 +11,11 @@ function venv-activate() {
         return 1
     fi
 
+    # Deactivate current virtual environment if one is active
+    if [[ -n $(type -t deactivate) && $(type -t deactivate) == 'function' ]]; then
+        deactivate
+    fi
+
     ENV_PATH="$VENV_DIR/$1/bin/activate"
 
     if [[ -f "$ENV_PATH" ]]; then
